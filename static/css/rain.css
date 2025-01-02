@@ -1,0 +1,27 @@
+/* 页面基本样式 */
+body {
+    margin: 0;
+}
+
+#rain-container {
+    position: fixed;  /* 固定在页面上层 */
+    top: -100px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* 使容器不阻挡用户与页面的交互 */
+    z-index: 995; /* 确保雨滴效果在其他内容之上 */
+}
+
+.rain-drop {
+    position: absolute;
+    width: 48px; /* 图片宽度 */
+    height: 48px; /* 图片高度 */
+    pointer-events: none; /* 防止图片与鼠标事件冲突 */
+    animation: fall linear infinite; /* 下落动画 */
+}
+@keyframes fall {
+    to {
+        transform: translateY(800px); /* 从顶部到达底部 */
+    }
+}
